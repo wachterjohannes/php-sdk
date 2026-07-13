@@ -6,11 +6,11 @@ All notable changes to `mcp/sdk` will be documented in this file.
 -----
 
 * Allow `[$instance, 'methodName']` as an element handler in `Builder::addTool()`, `addResource()`, `addResourceTemplate()`, and `addPrompt()`. Unblocks handlers with constructor dependencies that the container-less `new $className()` fallback cannot build.
+* Add client-side `roots/list` handler (`ListRootsRequestHandler` + `RootsCallbackInterface`) and `Client::sendRootsListChanged()`, plus server-side `ClientGateway::listRoots()` / `supportsRoots()` and `ListRootsResult::fromArray()`.
 
 0.6.0
 -----
 
-* Add client-side `roots/list` handler (`ListRootsRequestHandler` + `RootsCallbackInterface`) and `Client::sendRootsListChanged()`, plus server-side `ClientGateway::listRoots()` / `supportsRoots()` and `ListRootsResult::fromArray()`.
 * Add `Builder::add(Tool|ResourceDefinition|ResourceTemplate|Prompt $definition, ElementHandlerInterface $handler)` for explicit registration of elements whose schema is only known at runtime.
 * Add handler interfaces `ToolHandlerInterface`, `ResourceHandlerInterface`, `ResourceTemplateHandlerInterface`, `PromptHandlerInterface`, and the `ElementHandlerInterface` marker.
 * [BC Break] Renamed `Mcp\Schema\Resource` to `Mcp\Schema\ResourceDefinition`. No alias.
